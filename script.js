@@ -181,8 +181,19 @@ class TBAIComplianceChat {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const data = await response.json();
-        return data.response || data.message || 'Thank you for your question. I\'ve received it and will provide assistance based on compliance best practices.';
+        // Handle empty response
+        const text = await response.text();
+        if (!text) {
+            return 'Thank you for your question. I\'ve received it and will provide assistance based on compliance best practices.';
+        }
+
+        try {
+            const data = JSON.parse(text);
+            return data.response || data.message || 'Thank you for your question. I\'ve received it and will provide assistance based on compliance best practices.';
+        } catch (e) {
+            // If response is not JSON, return as text
+            return text || 'Thank you for your question. I\'ve received it and will provide assistance based on compliance best practices.';
+        }
     }
 
     addMessageToChat(message, sender, isError = false) {
