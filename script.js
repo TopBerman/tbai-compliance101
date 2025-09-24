@@ -1,8 +1,8 @@
 class TBAIComplianceChat {
     constructor() {
         this.webhookUrls = {
-            test: 'https://topbermanai.app.n8n.cloud/webhook-test/bf4dd093-bb02-472c-9454-7ab9af97bd1d',
-            production: 'https://topbermanai.app.n8n.cloud/webhook/bf4dd093-bb02-472c-9454-7ab9af97bd1d'
+            test: 'https://topbermanai.app.n8n.cloud/webhook-test/8bd32dfb-44e6-4548-b588-b8baf430c348',
+            production: 'https://topbermanai.app.n8n.cloud/webhook/8bd32dfb-44e6-4548-b588-b8baf430c348'
         };
 
         this.maxQueriesPerDay = 10;
@@ -168,7 +168,7 @@ class TBAIComplianceChat {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'compliance': '101',
+                'Name': 'compliance 101',
                 'Authorization': 'crni2025'
             },
             body: JSON.stringify({
