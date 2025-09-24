@@ -168,7 +168,7 @@ class TBAIComplianceChat {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'copliance 101': 'crni2025'
+                'compliance 101': 'crni2025'
             },
             body: JSON.stringify({
                 message: message,
