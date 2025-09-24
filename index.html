@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TBAI Compliance 101</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo-placeholder">TBAI</div>
+                <h1 class="title">TBAI Compliance 101</h1>
+            </div>
+            <div class="environment-toggle">
+                <label class="toggle-label">
+                    <input type="checkbox" id="env-toggle" checked>
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-text">Production</span>
+                </label>
+            </div>
+        </header>
+
+        <!-- Rate Limit Info -->
+        <div class="rate-limit-info">
+            <span id="queries-remaining">10 queries remaining today</span>
+        </div>
+
+        <!-- Chat Container -->
+        <div class="chat-container">
+            <div class="chat-messages" id="chat-messages">
+                <div class="welcome-message">
+                    <h3>Welcome to TBAI Compliance 101</h3>
+                    <p>Ask me anything about compliance regulations, policies, or best practices. You have 10 queries per day.</p>
+                </div>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div class="loading-indicator" id="loading-indicator">
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <span>AI is thinking...</span>
+            </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input-container">
+            <div class="chat-input-wrapper">
+                <input
+                    type="text"
+                    id="chat-input"
+                    placeholder="Ask about compliance regulations, policies, or best practices..."
+                    maxlength="500"
+                >
+                <button id="send-button" type="button">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="input-info">
+                <small id="char-count">0/500 characters</small>
+            </div>
+        </div>
+
+        <!-- Rate Limit Modal -->
+        <div class="modal" id="rate-limit-modal">
+            <div class="modal-content">
+                <h3>Query Limit Reached</h3>
+                <p>You've used all 10 queries for today. Please try again in:</p>
+                <div class="countdown" id="countdown-timer">--:--:--</div>
+                <button onclick="closeModal()" class="modal-close">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
